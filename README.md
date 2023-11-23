@@ -1,65 +1,80 @@
-# Qwik City App ⚡️
+## Deployment instructions
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
-
----
-
-## Project Structure
-
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
-
-Inside your project, you'll see the following directory structure:
+The web app is running on a pm2 process on Sissi;  
+The application files are at ~/belelabestia-it;  
+To check pm2 process:
 
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
+pm2 ls
 ```
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
+After deploy, restart web app, from ~/belelabestia-it:
 
-- `src/components`: Recommended directory for components.
-
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `npm run qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
-
-```shell
-npm run qwik add # or `yarn qwik add`
+```
+pm2 restart entry.express
 ```
 
-## Development
+Caddy server is exposing the web app to the web;  
+to reload caddy, from ~/belelabestia-it:
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
-
-```shell
-npm start # or `yarn start`
+```
+caddy reload
 ```
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
+From the dev machine, in the repo root folder, run:
 
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-npm run preview # or `yarn preview`
+```
+scp -r dist server root@belelabestia.it:belelabestia-it/
 ```
 
-## Production
+The site should be automatically updated.
+## Deployment instructions
 
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
+The web app is running on a pm2 process on Sissi;  
+The application files are at ~/belelabestia-it;  
+To check pm2 process:
 
-```shell
-npm run build # or `yarn build`
 ```
+pm2 ls
+```
+
+After deploy, restart web app, from ~/belelabestia-it:
+
+```
+pm2 restart entry.express
+```
+
+Caddy server is exposing the web app to the web;  
+to reload caddy, from ~/belelabestia-it:
+
+```
+caddy reload
+```
+
+From the dev machine, in the repo root folder, run:
+
+```
+scp -r dist server root@belelabestia.it:belelabestia-it/
+```
+
+The site should be automatically updated.
+
+## Fastify Server
+
+This app has a minimal [Fastify server](https://fastify.dev/) implementation. After running a full build, you can preview the build using the command:
+
+```
+npm run serve
+```
+
+Then visit [http://localhost:3000/](http://localhost:3000/)
+
+## Fastify Server
+
+This app has a minimal [Fastify server](https://fastify.dev/) implementation. After running a full build, you can preview the build using the command:
+
+```
+npm run serve
+```
+
+Then visit [http://localhost:3000/](http://localhost:3000/)

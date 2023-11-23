@@ -1,0 +1,1 @@
+[Light](/light) | [Dark](/dark)

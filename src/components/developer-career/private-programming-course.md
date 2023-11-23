@@ -1,0 +1,3 @@
+### March 2022 - May 2022 | Private programming course
+
+During my last few months in CAPP, I gave private tutoring in JavaScript programming basics. My course used material and examples from [javascript.info](https://javascript.info/), but I adopted a unique approach that I find more effective in creating good programmers. It consists in prioritizing architecture and design elements, such as types and naming, over control flow and language-specific constructs: in my experience the latter lead to a heavy procedural-centric, algorithm-based approach in coding in the early years of experience, and in the long run causes a poor understanding and embracing of the main practices that make code predictable, testable and mantainable.
