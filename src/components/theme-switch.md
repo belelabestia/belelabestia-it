@@ -1,1 +1,1 @@
-[Light](/light) | [Dark](/dark)
+[Light](?theme=light) | [Dark](?theme=dark)

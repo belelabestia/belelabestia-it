@@ -1,6 +1,6 @@
-import type { RouteLocation } from "@builder.io/qwik-city";
+import { useLocation } from "@builder.io/qwik-city";
 
-export const getTheme = (
-  query: RouteLocation["params"],
-): "theme dark" | "theme light" =>
-  query["theme"] == "light" ? "theme light" : "theme dark";
+export const useTheme = () => {
+  const loc = useLocation();
+  return `theme ${loc.url.searchParams.get("theme") ?? "light"}`;
+};
