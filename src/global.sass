@@ -56,6 +56,11 @@ hr
   --content: black
   --highlight: black
 
+@mixin dark()
+  --background: hsl(320deg 50% 4%)
+  --content: hsl(0, 0%, 75%)
+  --highlight: hsl(100deg, 70%, 60%)
+
 .theme
   color: var(--content)
   background-color: var(--background)
@@ -73,9 +78,16 @@ hr
     @include light
 
   &.dark
-    --background: hsl(320deg 50% 4%)
-    --content: hsl(0, 0%, 75%)
-    --highlight: hsl(100deg, 70%, 60%)
+    @include dark
+
+@media (prefers-color-scheme: dark)
+  .theme.system
+    @include dark
+
+@media (prefers-color-scheme: light)
+  .theme.system
+    @include light
+
 
 @media print
   p,
