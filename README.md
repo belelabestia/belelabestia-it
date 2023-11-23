@@ -28,6 +28,7 @@ scp -r dist server root@belelabestia.it:belelabestia-it/
 ```
 
 The site should be automatically updated.
+
 ## Deployment instructions
 
 The web app is running on a pm2 process on Sissi;  
