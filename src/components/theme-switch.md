@@ -1,1 +1,1 @@
-[Light](?theme=light) | [Dark](?theme=dark)
+[Light](?theme=light) | [Dark](?theme=dark) | [System](/)
