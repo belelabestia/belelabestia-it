@@ -1,6 +1,6 @@
 services:
   app:
-    image: belelabestia-it
     build: .
+    image: belelabestia-it
     ports:
       - 3000:3000
