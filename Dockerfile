@@ -3,7 +3,6 @@ COPY . /repo
 WORKDIR /repo
 RUN npm ci
 RUN npm run build
-CMD npm run serve
 
 FROM node:20-alpine
 COPY --from=build /repo/dist /app/dist
