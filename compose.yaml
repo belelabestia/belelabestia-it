@@ -2,3 +2,4 @@ services:
   belelabestia-it:
     build: .
     image: belelabestia-it
+    restart: unless-stopped
